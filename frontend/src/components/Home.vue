@@ -50,7 +50,7 @@
         <h2>Pronto para descobrir seu futuro?</h2>
         <p>Junte-se a nossos estudantes que já encontraram seu caminho com a OrientAI</p>
              <a href="#" class="btn btn-primary" @click="$emit('iniciar-questionario')">
-               Começar Agora - É Grátis
+               Começar Agora!
              </a>
       </div>
     </section>
