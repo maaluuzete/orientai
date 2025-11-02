@@ -1,6 +1,24 @@
+# Arquivos de cache e temporários do Python
 __pycache__/
-.env
 *.pyc
+*.pyo
+*.log
+
+# Ambientes virtuais (diferentes nomes possíveis)
+.venv/
+venv/
+env/
+ENV/
+
+# Variáveis de ambiente e chaves locais
+.env
+
+# Dependências do frontend
 node_modules/
 dist/
-venv/
+build/
+
+# Arquivos do sistema / IDEs
+.DS_Store
+.vscode/
+.idea/
