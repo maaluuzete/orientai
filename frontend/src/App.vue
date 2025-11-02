@@ -30,10 +30,6 @@ export default {
     }
   },
   methods: {
-    irParaHome() {
-      this.paginaAtual = 'home'
-      this.recomendacao = null
-    },
     irParaFormulario() {
       this.paginaAtual = 'formulario'
     },
