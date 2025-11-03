@@ -1,4 +1,3 @@
-# ai/pipeline.py
 import os
 import json
 import requests
@@ -58,7 +57,7 @@ def _call_hf_chat(prompt: str, hf_key: str):
         "Accept": "application/json",
     }
     payload = {
-        "model": MODEL_ID,  # ex.: "meta-llama/Meta-Llama-3-8B-Instruct"
+        "model": MODEL_ID, 
         "messages": [
             {"role": "system", "content": "Você é um orientador vocacional."},
             {"role": "user", "content": prompt}
