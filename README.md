@@ -4,7 +4,7 @@ Plataforma de orientação universitária com IA.
 ## Estrutura do Projeto
 - **frontend/** – Interface (Vue 3 + Axios)  
 - **backend/** – API (Flask + SQLAlchemy)  
-- **ai/** – Lógica de IA (Hugging Face)  
+- **backend/ai/** – Lógica de IA (Hugging Face)  
 
 ## Como rodar cada parte
 Veja os READMEs internos em cada pasta.

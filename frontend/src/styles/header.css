@@ -10,7 +10,7 @@
   padding: 1rem 0;
 }
 
-.header-content {
+.conteudo-cabecalho {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -28,13 +28,13 @@
 }
 
 
-.header-actions {
+.acoes-cabecalho {
   display: flex;
   gap: 1rem;
   align-items: center;
 }
 
-.btn-login {
+.btn-entrar {
   color: #F8FAFC;
   text-decoration: none;
   font-weight: 500;
@@ -43,6 +43,6 @@
   transition: background-color 0.3s ease;
 }
 
-.btn-login:hover {
+.btn-entrar:hover {
   background-color: rgba(248, 250, 252, 0.1);
 }
