@@ -2,13 +2,89 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 from ai.pipeline import generate_recommendations
 import os
-
-import os
+import sqlite3
+import json
 import requests
 app = Flask(__name__)
 
 # Ex.: CORS_ORIGINS=http://localhost:5173,https://orientai.vercel.app
 CORS(app, resources={r"/api/*": {"origins": os.getenv("CORS_ORIGINS", "*").split(",")}})
+
+DB_PATH = os.getenv("DB_PATH", "orientai.db")
+# Banco de Dados 
+def connect_db():
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    return conn
+
+def create_tables():
+    with connect_db() as conn:
+        conn.executescript("""
+        CREATE TABLE IF NOT EXISTS student_forms (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT,
+            age INTEGER,
+            year TEXT,
+            city TEXT,
+            state TEXT,
+            country TEXT,
+            interest_areas TEXT,
+            favorite_subjects TEXT,
+            least_subjects TEXT,
+            hobbies TEXT,
+            strengths TEXT,
+            improvements TEXT,
+            study_modality TEXT,
+            dream_course TEXT,
+            team_pref TEXT,
+            work_style TEXT,
+            challenge_tolerance INTEGER,
+            routine_preference INTEGER,
+            motivations TEXT,
+            recommendations_json TEXT
+        );
+        """)
+        conn.commit()
+
+def save_form(data: dict, recommendations: dict):
+    with connect_db() as conn:
+        conn.execute("""
+            INSERT INTO student_forms (
+                name, age, year, city, state, country,
+                interest_areas, favorite_subjects, least_subjects, hobbies,
+                strengths, improvements, study_modality, dream_course,
+                team_pref, work_style, challenge_tolerance, routine_preference,
+                motivations, recommendations_json
+            ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+        """, (
+            data.get("name"),
+            data.get("age"),
+            data.get("year"),
+            data.get("city"),
+            data.get("state"),
+            data.get("country"),
+            ", ".join(data.get("interest_areas", [])),
+            ", ".join(data.get("favorite_subjects", [])),
+            ", ".join(data.get("least_subjects", [])),
+            data.get("hobbies"),
+            ", ".join(data.get("strengths", [])),
+            ", ".join(data.get("improvements", [])),
+            data.get("study_modality"),
+            data.get("dream_course"),
+            data.get("team_pref"),
+            data.get("work_style"),
+            data.get("challenge_tolerance"),
+            data.get("routine_preference"),
+            data.get("motivations"),
+            json.dumps(recommendations)
+        ))
+        conn.commit()
+
+def fetch_forms(limit=20):
+    with connect_db() as conn:
+        cur = conn.execute("SELECT * FROM student_forms ORDER BY id DESC LIMIT ?", (limit,))
+        return [dict(row) for row in cur.fetchall()]
+    
 
 @app.route("/", methods=["GET"])
 def home():
@@ -71,11 +147,25 @@ def _normalize_form(raw: dict) -> dict:
         "routine_preference": _clamp(_to_int(raw.get("routine_preference"))),    # 1..5
     }
 
+@app.route("/initdb", methods=["GET"])
+def initdb():
+    create_tables()
+    return jsonify({"status": "ok", "message": "Database initialized successfully!"})
+
+@app.route("/api/forms", methods=["GET"])
+def get_forms():
+    forms = fetch_forms(limit=20)
+    return jsonify(forms)
+
 @app.route("/api/recommend", methods=["POST"])
 def recommend():
     raw = request.get_json(silent=True) or {}
     data = _normalize_form(raw)   # << usa o normalizado
     result = generate_recommendations(data)
+    try:
+        save_form(data, result)
+    except Exception as e:
+        print("Error saving to database:", e)
     has_error = isinstance(result, dict) and ("error" in result or "erro" in result)
     return jsonify(result), (502 if has_error else 200)
 
@@ -91,4 +181,5 @@ def debug_env():
 if __name__ == "__main__":
     debug = os.getenv("FLASK_DEBUG", "true").lower() == "true"
     port = int(os.getenv("PORT", "5000"))
+    create_tables()
     app.run(host="0.0.0.0", port=port, debug=debug)
