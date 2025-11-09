@@ -1,17 +1,24 @@
-# OrientAI - MVP
-Plataforma de orientação universitária com IA.
+# OrientAI - MVP  
+AI-powered university guidance platform.  
 
-## Estrutura do Projeto
-- **frontend/** – Interface (Vue 3 + Axios)  
+[🇧🇷 Read in Portuguese](README.pt-BR.md)
+
+---
+
+**OrientAI** is a platform that uses Artificial Intelligence to help Brazilian high school students discover university majors that match their interests, strengths, and goals.  
+Currently under development as an MVP (Minimum Viable Product) by a four-person student team.
+
+## Project Structure
+- **frontend/** – User Interface (Vue 3 + Axios)  
 - **backend/** – API (Flask + SQLAlchemy)  
-- **backend/ai/** – Lógica de IA (Hugging Face)  
+- **backend/ai/** – AI Logic (Hugging Face)  
 
-## Como rodar cada parte
-Veja os READMEs internos em cada pasta.
+## How to Run Each Component
+See the internal READMEs inside each folder for setup instructions.
 
-## Tecnologias Principais
+## Main Technologies
 - **Frontend:** Vue 3 + Axios  
 - **Backend:** Flask + SQLAlchemy  
-- **Banco de Dados:** SQLite (desenvolvimento) / PostgreSQL (produção)  
-- **IA:** Hugging Face API  
-- **Deploy:** Render (backend) + Vercel (frontend)
+- **Database:** SQLite (development) / PostgreSQL (production)  
+- **AI:** Hugging Face API  
+- **Deployment:** Render (backend) + Vercel (frontend)
