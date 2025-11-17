@@ -13,15 +13,13 @@
 import Header from './components/Header.vue'
 import Home from './components/Home.vue'
 import Form from './components/Form.vue'
-import Results from './components/Results.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
     Home,
-    Form,
-    Results
+    Form
     //Results
   },
   data() {
