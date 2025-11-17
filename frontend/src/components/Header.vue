@@ -3,7 +3,10 @@
     <div class="conteudo-cabecalho">
       <a href="#" class="logo">OrientAI</a>
       <div class="acoes-cabecalho">
-        <a href="#" class="btn btn-primary" @click="$emit('iniciar-questionario')">Começar agora</a>
+        <a href="#equipe" class="link-nav" >Equipe</a>
+        <a href="#contato" class="link-nav" >Contato</a>
+        
+        <a href="#como-funciona" class="link-nav">Como Funciona</a>
       </div>
     </div>
   </header>
@@ -16,4 +19,6 @@ export default {
   name: 'Header',
   emits: ['iniciar-questionario']
 }
-</script>
+
+
+</script> 

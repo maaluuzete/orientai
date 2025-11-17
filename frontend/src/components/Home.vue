@@ -3,7 +3,7 @@
     <section class="hero">
       <div class="conteudo-hero">
         <h1>
-          Descubra seu futuro com o <span class="gradient-text">OrientAI</span>
+          Descubra seu futuro com <br> <span class="gradient-text">OrientAI</span>
         </h1>
         <p>
           IA que entende seu perfil e indica o caminho ideal para sua carreira
@@ -45,7 +45,99 @@
       </div>
     </section>
 
-    <section class="chamada-acao">
+    <section class="secao-equipe secao" id="equipe">
+      <div class="container">
+        <h2 class="titulo-secao">Nossa Equipe</h2>
+        <p class="subtitulo-secao">
+          Conheça o time por trás do OrientAI
+        </p>
+
+        <div class="grade-equipe">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="foto-equipe">
+                  <img src="../assets/malu.jpeg" >
+                </div>
+                <p class="frase-equipe">
+                  Malu Araujo<br>
+                  Back-end Developer  </p>
+              </div>
+              <div class="flip-card-back">
+                <p class="texto-equipe">
+                  Malu Araujo
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ex velit soluta mollitia impedit fugiat, tempora, earum officiis eligendi recusandae beatae, ad alias! Dolores iure asperiores quasi voluptas error nihil..
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="foto-equipe">
+                  <img src="../assets/marcos.jpeg" alt="Membro da equipe">
+                </div>
+                <p class="frase-equipe">
+                  Marcos Vinicio<br>
+                  Front-end Developer</p>
+              </div>
+              <div class="flip-card-back">
+                <p class="texto-equipe">
+                  Marcos Vinicio<br>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ex velit soluta mollitia impedit fugiat, tempora, earum officiis eligendi recusandae beatae, ad alias! Dolores iure asperiores quasi voluptas error nihil..
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="foto-equipe">
+                  <img src="../assets/sabrina.jpeg" alt="Membro da equipe">
+                </div>
+                  <p class="frase-equipe">
+                    Sabrina Paszko<br>
+                    AI Engineer</p>
+              </div>
+              <div class="flip-card-back">
+                <p class="texto-equipe">
+                  Sabrina Paszko<br>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ex velit soluta mollitia impedit fugiat, tempora, earum officiis eligendi recusandae beatae, ad alias! Dolores iure asperiores quasi voluptas error nihil..
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="foto-equipe">
+                  <img src="../assets/vini.jpeg" alt="Membro da equipe">
+                </div>
+                <p class="frase-equipe">
+                  Vinicius Knop<br>
+                  Data Engineer</p>
+              </div>
+              <div class="flip-card-back">
+                <p class="texto-equipe">
+                  Vinicius Knop<br>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ex velit soluta mollitia impedit fugiat, tempora, earum officiis eligendi recusandae beatae, ad alias! Dolores iure asperiores quasi voluptas error nihil..
+                </p>
+              </div>
+            </div>
+          </div>
+
+        
+        </div>
+
+        
+
+      </div>
+    </section>
+
+    <section class="chamada-acao secao">
       <div class="container">
         <h2>Pronto para descobrir seu futuro?</h2>
         <p>Junte-se a nossos estudantes que já encontraram seu caminho com o OrientAI</p>
@@ -56,7 +148,7 @@
     </section>
 
     <footer class="rodape">
-      <div class="container">
+      <div class="container" id="contato">
         <div class="conteudo-rodape">
           <div class="secao-rodape">
             <h3>OrientAI</h3>
@@ -69,7 +161,7 @@
           </div>
         </div>
         <div class="rodape-inferior">
-          <p>© 2025 OrientAI. Todos os direitos reservados.</p>
+          <p>©2025 OrientAI. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

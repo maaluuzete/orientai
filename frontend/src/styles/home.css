@@ -1,14 +1,15 @@
 main {
   flex: 1;
-  padding-top: 80px;
+  padding-top: 0;
 }
 
 .hero {
-  background: linear-gradient(135deg, #0B0F19 0%, #0F172A 100%);
-  padding: 6rem 0;
+  background: rgba(255, 255, 255, 1);
+  padding: 12rem 0 6rem;
   text-align: center;
   position: relative;
   overflow: hidden;
+  margin-top: 0;
 }
 
 .hero::before {
@@ -34,6 +35,7 @@ main {
 .conteudo-hero h1 {
   font-size: 4rem;
   margin-bottom: 1.5rem;
+  font-weight: 300;
 }
 
 .hero p,
@@ -53,18 +55,46 @@ main {
 }
 
 .hero .btn-primary {
-  background: linear-gradient(135deg, #06B6D4, #0891B2);
-  box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);
+  --clr-font-main: hsla(0 0% 20% / 100);
+  --btn-bg-1: hsla(194 100% 69% / 1);
+  --btn-bg-2: hsla(217 100% 56% / 1);
+  --btn-bg-color: hsla(360 100% 100% / 1);
+  --radii: 0.5em;
+  cursor: pointer;
+  padding: 0.9em 2em;
+  min-width: 120px;
+  min-height: 44px;
+  font-size: var(--size, 1rem);
+  font-weight: 500;
+  transition: 0.8s;
+  background-size: 280% auto;
+  background-image: linear-gradient(
+    325deg,
+    var(--btn-bg-2) 0%,
+    var(--btn-bg-1) 55%,
+    var(--btn-bg-2) 90%
+  );
+  border: none;
+  border-radius: 40px;
+  color: var(--btn-bg-color);
+  box-shadow:
+    0px 0px 20px rgba(71, 184, 255, 0.5),
+    0px 5px 5px -1px rgba(58, 125, 233, 0.25),
+    inset 4px 4px 8px rgba(175, 230, 255, 0.5),
+    inset -4px -4px 8px rgba(19, 95, 216, 0.35);
 }
+
 
 .hero .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 20px 40px rgba(6, 182, 212, 0.4);
+  background-position: right top;
 }
 
 .secao {
   padding: 6rem 0;
   color: #F8FAFC;
+  margin-bottom: 10rem;
 }
 
 .titulo-secao {
@@ -89,13 +119,16 @@ main {
 }
 
 .card {
-  background: rgba(30, 41, 59, 0.6);
+  background: rgba(13, 30, 56, 0.3);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(248, 250, 252, 0.1);
+  border: 1px solid rgb(7, 40, 73);
   padding: 2rem;
   border-radius: 12px;
   text-align: center;
   transition: transform 0.3s ease;
+  background: linear-gradient(135deg, #0b003b, #3a4b8a, #000a49);
+  box-shadow: 0px 3rem 1.5rem -0.9rem #000000e1;
+
 }
 
 .card:hover {
@@ -106,12 +139,17 @@ main {
   font-family: 'Sora', sans-serif;
   font-size: 3rem;
   font-weight: 800;
-  color: #1e3a8a;
+  color: #9aabda;
   margin-bottom: 1rem;
 }
 
 .card h3 {
   margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.card p {
+  color: #faf0ba;
 }
 
 .chamada-acao {
@@ -132,9 +170,9 @@ main {
 }
 
 .rodape {
-  background: #0F172A;
+  background: #1e194b;
   padding: 4rem 0 2rem;
-  color: #94A3B8;
+  color: #eff0f1;
 }
 
 .conteudo-rodape {
@@ -147,10 +185,12 @@ main {
 .secao-rodape h3 {
   font-size: 1.125rem;
   margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 1);
 }
 
 .secao-rodape p {
   margin-bottom: 1rem;
+  color: rgb(193, 151, 241);
 }
 
 .rodape-inferior {
@@ -158,4 +198,106 @@ main {
   padding-top: 2rem;
   text-align: center;
   color: #64748B;
+}
+
+.rodape-inferior p {
+  color: rgb(193, 151, 241);
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 250px;
+  height: 400px;
+  perspective: 1000px;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid rgb(0, 132, 255);
+  border-radius: 1rem;
+}
+
+.flip-card-front {
+  background: linear-gradient(120deg, rgb(47, 22, 94) 60%, rgb(13, 0, 58) 88%,
+     rgb(223, 195, 255) 40%, rgb(0, 132, 255) 48%);
+  color: rgb(0, 128, 233);
+}
+
+.flip-card-back {
+  background: linear-gradient(120deg, rgb(35, 54, 117) 30%, rgb(21, 22, 56) 88%,
+     bisque 40%, rgb(80, 0, 104) 78%);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.grade-equipe {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 2rem; 
+  margin-top: 3rem;
+}
+
+.foto-equipe {
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 4rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin: 10%;
+}
+
+.foto-equipe img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.frase-equipe {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: 1.6;
+  padding: 0 1rem;
+  margin: 0;
+  text-align: center;
+}
+
+.texto-equipe {
+  color: #faf0ba;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  padding: 0;
+  margin: 10%;
+  text-align: justify;
 }
