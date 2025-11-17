@@ -65,7 +65,7 @@
               </div>
               <div class="flip-card-back">
                 <p class="texto-equipe">
-                  Malu Araujo
+                  Malu Azevedo
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ex velit soluta mollitia impedit fugiat, tempora, earum officiis eligendi recusandae beatae, ad alias! Dolores iure asperiores quasi voluptas error nihil..
                 </p>
               </div>
