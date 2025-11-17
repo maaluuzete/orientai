@@ -103,8 +103,10 @@
               </div>
               <div class="flip-card-back">
                 <p class="texto-equipe">
-                  Sabrina Paszko<br>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ex velit soluta mollitia impedit fugiat, tempora, earum officiis eligendi recusandae beatae, ad alias! Dolores iure asperiores quasi voluptas error nihil..
+                  Sabrina Paszko<br><br>
+                  Gosto de arte, livros de fantasia, Marvel, Arctic Monkeys e comédias românticas. 
+                    Acredito no poder da IA para transformar a educação — e naquela felicidade quase mística quando um pipeline roda de primeira.
+Atuei na concepção, arquitetura e fluxo do sistema, implementei a camada de IA, defini a stack, contribuí para integrações e deploys da OrientAI e ajudei a organizar tarefas e cronogramas para a equipe.
                 </p>
               </div>
             </div>
