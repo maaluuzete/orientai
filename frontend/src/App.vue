@@ -5,6 +5,7 @@
       <Home v-if="paginaAtual === 'home'" @iniciar-questionario="irParaFormulario" />
       <Form v-if="paginaAtual === 'formulario'" @enviar-formulario="processarEnvio" @voltar="irParaHome" />
       <Results v-if="paginaAtual === 'resultados'" :recomendacao="recomendacao" @reiniciar="irParaHome" />
+      <Loading v-if="loading" />
     </main>
   </div>
 </template>
@@ -14,6 +15,7 @@ import Header from './components/Header.vue'
 import Home from './components/Home.vue'
 import Form from './components/Form.vue'
 import Results from './components/Results.vue'
+import Loading from './components/Loading.vue'
 
 export default {
   name: 'App',
@@ -21,12 +23,14 @@ export default {
     Header,
     Home,
     Form,
-    Results
+    Results,
+    Loading
   },
   data() {
     return {
       paginaAtual: 'home',
-      recomendacao: null
+      recomendacao: null,
+      loading: false
     }
   },
   methods: {
@@ -42,6 +46,10 @@ export default {
         area: 'Exatas / Tecnologia',
         explicacao: 'Você se destaca em matemática e lógica, gosta de programação e resolução de problemas complexos. Suas habilidades analíticas e interesse em tecnologia fazem de você um candidato ideal para esta área.'
       }
+      this.loading = true
+      setTimeout(() => {
+        this.loading = false
+      }, 4000);
       this.paginaAtual = 'resultados'
     }
   }

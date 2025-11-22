@@ -23,7 +23,7 @@
       <div class="container">
         <h2 class="titulo-secao">Como Funciona</h2>
         <p class="subtitulo-secao">
-          Em apenas 3 passos simples, nossa IA analisa seu perfil e gera recomendações personalizadas
+          Em apenas 3 passos simples, você recebe recomendações personalizadas da nossa inteligencia artificial
         </p>
         <div class="grade-cards">
           <div class="card">
@@ -151,8 +151,12 @@
           </div>
           <div class="secao-rodape">
             <h3>Contato</h3>
-            <p>orient.ai.behring@gmail.com</p>
-            <p>21 989144595</p>
+            <p>
+              <i class="fas fa-envelope"></i> orient.ai.behring@gmail.com
+            </p>
+            <p>
+              <i class="fas fa-phone"></i> +55 (21) 98914-4595
+            </p>
           </div>
         </div>
         <div class="rodape-inferior">
