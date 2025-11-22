@@ -1,0 +1,57 @@
+.results {
+  min-height: 100vh;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.results h1 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.recommendation-card {
+  background: linear-gradient(135deg, #1e3a8a, #7c3aed);
+  color: white;
+  padding: 6rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  box-shadow: 0 15px 40px rgba(30, 58, 138, 0.3);
+}
+
+.recommendation-card h2,
+.recommendation-card .area,
+.recommendation-card .explanation {
+  color: white;
+}
+
+.recommendation-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.recommendation-card .area {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
+.recommendation-card .explanation {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.actions {
+  text-align: center;
+}
+
+.btn {
+  background: linear-gradient(135deg, #3e1e8a, #7c3aed);
+  color: white;
+  box-shadow: 0 10px 30px rgba(30, 58, 138, 0.3);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(30, 58, 138, 0.4);
+}

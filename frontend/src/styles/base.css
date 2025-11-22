@@ -69,7 +69,6 @@ body {
     inset -4px -4px 8px rgba(19, 95, 216, 0.35);
 }
 
-
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 20px 40px rgba(30, 58, 138, 0.4);

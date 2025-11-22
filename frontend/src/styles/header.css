@@ -31,11 +31,11 @@
   text-decoration: none;
 }
 
-
 .acoes-cabecalho {
   display: flex;
   gap: 1rem;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .header .btn-primary {
@@ -66,11 +66,4 @@
 
 .link-nav:hover {
   background-color: rgba(29, 3, 122, 0.1);
-}
-
-.acoes-cabecalho {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  flex-wrap: wrap;
 }

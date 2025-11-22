@@ -60,13 +60,13 @@
                   <img src="../assets/malu.jpeg" >
                 </div>
                 <p class="frase-equipe">
-                  Malu Araujo<br>
+                  Malu Azevedo<br>
                   Back-end Developer  </p>
               </div>
               <div class="flip-card-back">
                 <p class="texto-equipe">
-                  Malu Azevedo
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ex velit soluta mollitia impedit fugiat, tempora, earum officiis eligendi recusandae beatae, ad alias! Dolores iure asperiores quasi voluptas error nihil..
+                  Malu Azevedo<br><br>
+                  Gosto de comédias românticas, arte e música, de MPB a Laufey. Toco violino, desenho e faço crochê, então "criar" sempre fez parte da minha rotina. Atuei no backend do sistema: desenvolvi a API, organizei o fluxo de processamento dos dados, preparei as integrações com a camada de IA, estruturei o salvamento das informações e cuidei do banco de dados para garantir que tudo funcionasse bem.
                 </p>
               </div>
             </div>
@@ -84,8 +84,8 @@
               </div>
               <div class="flip-card-back">
                 <p class="texto-equipe">
-                  Marcos Vinicio<br>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ex velit soluta mollitia impedit fugiat, tempora, earum officiis eligendi recusandae beatae, ad alias! Dolores iure asperiores quasi voluptas error nihil..
+                  Marcos Vinicio<br><br>
+                  Carioca, gosto de filmes da Marvel e sou um grande fã de Formula 1. Iniciei na computação aos 13 anos através do desenvolvimento de jogos e acredito muito no poder de impacto da tecnologia em nosso mundo. Atuei no design, estética, e garanti a melhor experiencia de usuário possível para o OrientAI. Além de integrar toda a parte visual da pagina com as demais camadas de dados e IA.
                 </p>
               </div>
             </div>
@@ -104,9 +104,7 @@
               <div class="flip-card-back">
                 <p class="texto-equipe">
                   Sabrina Paszko<br><br>
-                  Gosto de arte, livros de fantasia, Marvel, Arctic Monkeys e comédias românticas. 
-                    Acredito no poder da IA para transformar a educação — e naquela felicidade quase mística quando um pipeline roda de primeira.
-Atuei na concepção, arquitetura e fluxo do sistema, implementei a camada de IA, defini a stack, contribuí para integrações e deploys da OrientAI e ajudei a organizar tarefas e cronogramas para a equipe.
+                  Gosto de arte, livros de fantasia, Marvel, Arctic Monkeys e comédias românticas. Acredito no poder da IA para transformar a educação — e naquela felicidade quase mística quando um pipeline roda de primeira.Atuei na concepção, arquitetura e fluxo do sistema, implementei a camada de IA, defini a stack, contribuí para integrações e deploys da OrientAI e ajudei a organizar tarefas e cronogramas para a equipe.
                 </p>
               </div>
             </div>
@@ -130,12 +128,7 @@ Atuei na concepção, arquitetura e fluxo do sistema, implementei a camada de IA
               </div>
             </div>
           </div>
-
-        
         </div>
-
-        
-
       </div>
     </section>
 
@@ -178,10 +171,7 @@ export default {
   emits: ['iniciar-questionario'],
   methods: {
     rolarParaSecao() {
-      const elemento = document.getElementById('como-funciona')
-      if (elemento) {
-        elemento.scrollIntoView({ behavior: 'smooth' })
-      }
+      document.getElementById('como-funciona')?.scrollIntoView({ behavior: 'smooth' })
     }
   }
 }

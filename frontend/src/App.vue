@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header v-if="paginaAtual == 'home'"  @iniciar-questionario="irParaFormulario" />
+    <Header v-if="paginaAtual === 'home'" />
     <main>
       <Home v-if="paginaAtual === 'home'" @iniciar-questionario="irParaFormulario" />
       <Form v-if="paginaAtual === 'formulario'" @enviar-formulario="processarEnvio" @voltar="irParaHome" />
@@ -12,15 +12,16 @@
 <script>
 import Header from './components/Header.vue'
 import Home from './components/Home.vue'
-//import Form from './components/Form.vue'
+import Form from './components/Form.vue'
+import Results from './components/Results.vue'
 
 export default {
   name: 'App',
   components: {
     Header,
-    Home
-    //Form
-    //Results
+    Home,
+    Form,
+    Results
   },
   data() {
     return {
@@ -32,7 +33,10 @@ export default {
     irParaFormulario() {
       this.paginaAtual = 'formulario'
     },
-    processarEnvio(dadosFormulario) {
+    irParaHome() {
+      this.paginaAtual = 'home'
+    },
+    processarEnvio() {
       this.recomendacao = {
         curso: 'Engenharia de Computação',
         area: 'Exatas / Tecnologia',

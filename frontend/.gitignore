@@ -5,12 +5,9 @@ node_modules/
 dist/
 dist-ssr/
 
-# em desenvolvimento
-src/components/Form.vue
-src/components/Results.vue
 
-src/styles/results.css
-src/styles/form.css
+
+
 
 # Environment variables
 .env

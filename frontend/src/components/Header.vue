@@ -16,9 +16,6 @@
 import '../styles/header.css'
 
 export default {
-  name: 'Header',
-  emits: ['iniciar-questionario']
+  name: 'Header'
 }
-
-
 </script> 
