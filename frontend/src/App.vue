@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import Header from './components/Header.vue'
 import Home from './components/Home.vue'
 import Form from './components/Form.vue'
@@ -29,7 +30,7 @@ export default {
   data() {
     return {
       paginaAtual: 'home',
-      recomendacao: null,
+      recomendacao: {recommendations: []},
       loading: false
     }
   },
@@ -40,17 +41,36 @@ export default {
     irParaHome() {
       this.paginaAtual = 'home'
     },
-    processarEnvio() {
-      this.recomendacao = {
-        curso: 'Engenharia de Computação',
-        area: 'Exatas / Tecnologia',
-        explicacao: 'Você se destaca em matemática e lógica, gosta de programação e resolução de problemas complexos. Suas habilidades analíticas e interesse em tecnologia fazem de você um candidato ideal para esta área.'
+    async processarEnvio(dadosFormulario) {
+      this.loading = true;
+      const API_RENDER = "https://orientaibackend.onrender.com";
+      try{
+        const resposta = await axios.post(`${API_RENDER}/api/recommend`, dadosFormulario,
+      {
+        headers:{
+          "Content-Type": "application/json"
+        }
       }
-      this.loading = true
-      setTimeout(() => {
-        this.loading = false
-      }, 4000);
-      this.paginaAtual = 'resultados'
+    );
+      console.log("Resposta do Backend:", resposta.data);
+      this.recomendacao = {
+          recommendations: resposta.data.recommendations ?? []
+      };
+      this.paginaAtual = 'resultados';
+      }catch (erro){
+        console.error("Erro ao enviar dados:", erro);
+        this.recomendacao={
+          recommendations:[
+            {
+              course: "Erro",
+              area: "---",
+              reason: "Não foi possível conectar ao servidor."
+            }
+          ]
+        };
+        this.paginaAtual = 'resultados';
+  }
+  this.loading = false;
     }
   }
 }

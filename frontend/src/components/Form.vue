@@ -394,7 +394,7 @@
 
       <div class="botoes">
         <button class="btn-voltar" type="button" @click="$emit('voltar')">Voltar</button>
-        <button class="btn-gerar" type="submit" @click="enviarFormulario">Gerar Recomendações</button>
+        <button class="btn-gerar" type="submit">Gerar Recomendações</button>
       </div>
     </form>
   </div>
@@ -432,16 +432,7 @@ export default {
   },
   methods: {
     enviarFormulario() {
-      if (!this.dadosFormulario.name || !this.dadosFormulario.age || !this.dadosFormulario.year || 
-          !this.dadosFormulario.city || !this.dadosFormulario.state || !this.dadosFormulario.country ||
-          this.dadosFormulario.interest_areas.length === 0 || this.dadosFormulario.favorite_subjects.length === 0 ||
-          this.dadosFormulario.strengths.length === 0 || !this.dadosFormulario.study_modality ||
-          !this.dadosFormulario.team_pref || !this.dadosFormulario.work_style) {
-        alert('Preencha todos os campos obrigatorios *');
-        return;
-      }
-      
-      this.$emit('enviar-formulario', this.dadosFormulario);
+      this.$emit("enviar-formulario", this.dadosFormulario);
     }
   }
 }

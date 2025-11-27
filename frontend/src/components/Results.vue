@@ -2,13 +2,11 @@
   <div class="results">
     <div class="container">
       <h1>Suas Recomendações</h1>
-      
-      <div class="recommendation-card">
-        <h2>{{ recomendacao.curso }}</h2>
-        <div class="area">{{ recomendacao.area }}</div>
-        <div class="explanation">{{ recomendacao.explicacao }}</div>
-      </div>
-      
+        <div v-for="(rec, index) in recomendacao.recommendations" :key="index" class="recommendation-card">
+          <h2>{{rec.course}}</h2>
+          <div class="area">{{rec.area}}</div>
+          <div class="explanation">{{rec.reason}}</div>
+        </div>    
       <div class="actions">
         <button @click="$emit('reiniciar')" class="btn">
           Fazer Novo Teste
